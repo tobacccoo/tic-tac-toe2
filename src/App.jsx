@@ -20,7 +20,7 @@ function handleselectPlayer(){
            <Player initialname='Player2' symbol='0' isActive={activePlayer==='0'}/>
           </ol>
       
-        <Gameboard onselectPlayer={handleselectPlayer}/>
+        <Gameboard onselectPlayer={handleselectPlayer} activeSymbol={activePlayer}/>
       </div>
     </main>
 
