@@ -8,15 +8,17 @@ const initialGameboard= [
 
 
 
-export default function Gameboard(){
+export default function Gameboard({onselectPlayer, activeSymbol}){
 
 const [gameboard, setGameboard]= useState(initialGameboard);
 
 function handlesqClick(rowIndex, colIndex){
     setGameboard((prevGameboard)=>{
         const updatedBoard= [...prevGameboard.map(innerArray=>[...innerArray])]
-        updatedBoard[rowIndex][colIndex]='X';
+        updatedBoard[rowIndex][colIndex]= activeSymbol;
         return updatedBoard;
+
+        onselectPlayer();
 })
 }
 
